@@ -10,7 +10,7 @@ class Login extends Component {
                 <main className="form-signin">
                 <form>
                     <img className="mb-4" src="logo4.png" alt="" width="72" height="72" align="center" />
-                    <h1 className="h3 mb-3 fw-normal">Please sign in</h1>
+                    <h1 className="h3 mb-3 fw-normal" color="white">Please sign in</h1>
 
                     <div className="form-floating">
                     
@@ -28,7 +28,7 @@ class Login extends Component {
                         <input type="checkbox" value="remember-me" /> Remember me
                     </label>
                     </div>
-                    <button className="btn btn-outline-success" type="submit">Sign in</button>
+                    <button className="w-100 btn btn-lg btn-outline-success" type="submit">Sign in</button>
                     <p className="mt-5 mb-3 text-muted">&copy; 2017–2021</p>
                 </form>
                 </main>
