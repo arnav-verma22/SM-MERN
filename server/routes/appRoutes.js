@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
+var User = require('../models/User');
+
 router.use(bodyParser.json({ extended: true }));
 router.use(bodyParser.urlencoded({ extended: true }));
 
