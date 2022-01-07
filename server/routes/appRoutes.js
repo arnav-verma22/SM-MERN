@@ -17,8 +17,13 @@ router.get('/', (req, res) => {
 
 })
 
-router.get('/', (req, res) => {
-
+router.post('/', (req, res) => {
+    console.log(req.body)
+    return res.status(200).json(
+        {
+            "status": true,
+            "message": req.body
+        });
     
 })
 
