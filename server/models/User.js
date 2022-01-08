@@ -27,6 +27,10 @@ var userSchema = new Schema({
         type: String,
         required : true
     },
+    posts: {
+        type: String,
+        required : true
+    },
     following: {
         type: String,
         required : true
@@ -34,5 +38,5 @@ var userSchema = new Schema({
     
 });
 
-    mongoose.model("users", userSchema);
-    module.exports = mongoose.model("users");
+    mongoose.model("appuser", userSchema);
+    module.exports = mongoose.model("appuser");

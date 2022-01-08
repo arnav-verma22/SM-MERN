@@ -29,4 +29,13 @@ router.post('/', (req, res) => {
     
 })
 
+router.post('/signup', (req,res) => {
+    
+    return res.status(200).json(
+        {
+            "status": true,
+            "message": "Account created succesfully"
+        });
+})
+
 module.exports = router;
