@@ -1,5 +1,7 @@
 import React from "react";
 import { useState } from 'react'
+//import "../css/form-validation.css";
+
 
 const Register = () => {
     
@@ -38,39 +40,60 @@ const Register = () => {
     return(
         
         <>
-            <form className="row g-3 needs-validation" novalidate>
-                <div className="col-md-4 position-relative">
-                    <label for="validationTooltip01" className="form-label">Username</label>
-                    <input type="text" className="form-control" id="validationTooltip01" value={username} onChange={(e) => setUsername(e.target.value)} required />
-                    <div className="valid-tooltip">
-                    Looks good!
-                    </div>
+        <div className="col-md-10 mx-auto col-lg-6">
+         <div className="row align-items-center g-lg-5 py-5">
+        
+        <form class="needs-validation p-4 p-md-5 border rounded-3 bg-dark text-white" noValidate>
+        <h4 class="mb-3">Join Our Community</h4>
+          <div class="row g-3">
+            
+          <div class="col-12">
+              <label for="username" class="form-label">Username</label>
+              <div class="input-group has-validation">
+              <span class="input-group-text">#</span>
+                <input type="text" class="form-control" id="username" placeholder="Username" value={username} 
+                onChange={(e) => setUsername(e.target.value)} required />
+              <div class="invalid-feedback">
+                  Your username is required.
                 </div>
-                <hr />
-                <div className="col-md-4 position-relative">
-                    <label for="validationTooltipUsername" className="form-label">Email</label>
-                    <div className="input-group has-validation">
-                        <span className="input-group-text" id="validationTooltipUsernamePrepend">@</span>
-                        <input type="text" className="form-control" id="validationTooltipUsername" aria-describedby="validationTooltipUsernamePrepend"
-                        value={email} onChange={(e) => setEmail(e.target.value)} required />
-                        <div className="invalid-tooltip">
-                            Please choose a unique and valid username.
-                        </div>
-                    </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Email</label>
+              <div class="input-group has-validation">
+                <span class="input-group-text">@</span>
+                <input type="email" class="form-control" id="email" placeholder="you@example.com" value={email} 
+                onChange={(e) => setEmail(e.target.value)} required />
+              <div class="invalid-feedback">
+                  Your email is required.
                 </div>
-                <hr />
-                <div className="col-md-4 position-relative">
-                    <label for="validationTooltip02" className="form-label">Password</label>
-                    <input type="password" className="form-control" id="validationTooltip02" value={password} onChange={(e) => setPassword(e.target.value)} required />
-                    <div className="valid-tooltip">
-                    Looks good!
-                    </div>
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="password" class="form-label">Password</label>
+              <div class="input-group has-validation">
+              <span class="input-group-text">**</span>
+                <input type="password" class="form-control" id="password" value={password} 
+                onChange={(e) => setPassword(e.target.value)} required />
+              <div class="invalid-feedback">
+                  Your password is required.
                 </div>
-                
-                <div className="col-12">
-                    <button className="btn btn-primary" type="submit" onClick={registerUser}>Submit form</button>
-                </div>
-                </form>
+              </div>
+            </div>
+
+            
+          </div>
+
+          <hr class="my-4" />
+
+          <button class="w-100 btn btn-primary btn-lg" type="submit" onClick={registerUser}>Continue to checkout</button>
+        </form>
+      </div>
+      </div>
+
+
         </>
         
     )
