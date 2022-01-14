@@ -13,7 +13,7 @@ const Login = () => {
 	async function loginUser(event) {
 		event.preventDefault()
 
-		const response = await fetch('http://avr:80/', {
+		const response = await fetch('http://avr:80/login', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
@@ -27,14 +27,14 @@ const Login = () => {
 
 		const data = await response.json();
 
-		if (response.status === 200)
+        if (response.status === 200)
         {
-            window.alert("successfull GET", data.message);
+            window.alert(data.message);
             console.log(data);
         }else{
-            window.alert(data.status);
-            console.log(data.status);
-        }
+            window.alert(data.message);
+            console.log(data.message);
+        } 
         
 	}
     return (

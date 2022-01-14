@@ -12,13 +12,13 @@ const Register = () => {
 	async function registerUser(event) {
 		event.preventDefault()
 
-		const response = await fetch('http://avr:80/', {
+		const response = await fetch('http://avr:80/register', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
 			},
 			body: JSON.stringify({
-                username,
+        username,
 				email,
 				password,
 			}),
@@ -29,11 +29,11 @@ const Register = () => {
 
 		if (response.status === 200)
         {
-            window.alert("successfull GET", data.message);
+            window.alert(data.message);
             console.log(data);
         }else{
-            window.alert(data.status);
-            console.log(data.status);
+            window.alert(data.message);
+            console.log(data.message);
         }     
 	}
 
@@ -88,7 +88,7 @@ const Register = () => {
 
           <hr class="my-4" />
 
-          <button class="w-100 btn btn-primary btn-lg" type="submit" onClick={registerUser}>Continue to checkout</button>
+          <button class="w-100 btn btn-primary btn-lg" type="submit" onClick={registerUser}>Join</button>
         </form>
       </div>
       </div>
