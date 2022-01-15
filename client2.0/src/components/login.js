@@ -17,6 +17,7 @@ const Login = () => {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
+                'x-access-token': localStorage.getItem('token'),
 			},
 			body: JSON.stringify({
 				email,
@@ -29,6 +30,7 @@ const Login = () => {
 
         if (response.status === 200)
         {
+            localStorage.setItem('token', data.jwt)
             window.alert(data.message);
             console.log(data);
         }else{
