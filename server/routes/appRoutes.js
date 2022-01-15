@@ -2,20 +2,32 @@ const router = require('express').Router();
 const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
+const cookieParser = require('cookie-parser');
 
 var User = require('../models/User');
 
 router.use(bodyParser.json({ extended: true }));
 router.use(bodyParser.urlencoded({ extended: true }));
+router.use(cookieParser());
+
+const jwt_validTill = 5*60
+const generate_jwt = (id, age) => {
+    return jwt.sign(
+        {id}, 
+        'arnav',
+        {expiresIn: jwt_validTill}
+    );
+}
 
 
 router.get('/', (req, res) => {
-   
-    return res.status(200).json(
-        {
-            "status": true,
-            "message": "Hi Arnav"
-        });
+    res.cookie('token', 'dfdsdsfd');
+    res.redirect('http://localhost:3000/login')
+    // return res.status(200).json(
+    //     {
+    //         "status": true,
+    //         "message": "Hi Arnav"
+    //     });
 
 })
 
@@ -41,6 +53,7 @@ router.post('/register', async (req, res) => {
 
         const user = new User({username, email, password: hashedPasssword});
         await user.save();
+        
         return res.status(200).json({message: "User successfully registered"});
 
     } catch (error) {
@@ -67,7 +80,14 @@ router.post('/login', async (req,res) => {
     const isvalid = await bcrypt.compare(req.body.password, UserExist.password)
     if(isvalid)
     {
-        return res.status(200).json({"message": "Sign in sucessfull"});
+        const token = generate_jwt(UserExist._id)
+        //res.cookie('token', token, {httpOnly:true});
+        //res.setHeader('Set-Cookie', 'jwt=token');
+        return res.status(200).json({
+            "message": "Sign in sucessfull",
+            "jwt": token,
+            "user": UserExist.username
+        });
     }
     else
     {

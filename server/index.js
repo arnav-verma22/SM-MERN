@@ -5,11 +5,13 @@ const cors = require('cors');
 const morgan = require('morgan');
 const connectDB = require('./DBConnection');
 const port = process.env.PORT
+const cookieParser = require('cookie-parser');
 
 const appRoutes = require('./routes/appRoutes')
 
 app.use(cors());
 app.use(morgan('dev'));
+app.use(cookieParser());
 
 app.use(appRoutes);
 app.use(express.json())
