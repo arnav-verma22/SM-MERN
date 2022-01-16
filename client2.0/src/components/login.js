@@ -1,12 +1,12 @@
 import React from "react";
 import { useState } from 'react'
-//import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 //import "../css/signin.css";
 
 const Login = () => {
   
-      
+    const navigate = useNavigate();
     const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 
@@ -33,6 +33,7 @@ const Login = () => {
             localStorage.setItem('token', data.jwt)
             window.alert(data.message);
             console.log(data);
+            navigate('/profile')
         }else{
             window.alert(data.message);
             console.log(data.message);

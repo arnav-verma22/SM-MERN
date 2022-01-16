@@ -1,12 +1,14 @@
 import React from "react";
 import { useState } from 'react'
 //import "../css/form-validation.css";
+import { useNavigate } from 'react-router-dom';
 
 
 const Register = () => {
     
-    const [username, setUsername] = useState('')
-    const [email, setEmail] = useState('')
+  const navigate = useNavigate();
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
 	const [password, setPassword] = useState('')
 
 	async function registerUser(event) {
@@ -31,6 +33,7 @@ const Register = () => {
         {
             window.alert(data.message);
             console.log(data);
+            navigate('/login');
         }else{
             window.alert(data.message);
             console.log(data.message);

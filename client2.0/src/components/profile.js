@@ -1,7 +1,52 @@
-import React from "react";
+//import React from "react";
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import "../css/list-groups.css";
 
 const Profile = () => {
+
+    const navigate = useNavigate();
+    const [username, setUsername] = useState('')
+	const [email, setEmail] = useState('')
+
+    const getProfile = async () => {
+        
+        try 
+        {
+            const response = await fetch('http://avr:80/profile', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-access-token': localStorage.getItem('token'),
+            },
+                
+            })
+
+            const data = await response.json();
+
+            if (response.status === 200)
+            {
+                //window.alert(data.username);
+                console.log(data);
+                setUsername(data.username);
+                setEmail(data.email);
+
+            }else{
+                const err = new Error(response.error);
+                throw err; 
+            }
+        } catch(error){
+            console.log(error)
+            navigate('/login')
+        }
+
+    }
+    useEffect(() => {
+        
+        getProfile();
+
+    }, []);
+
     return(
         <>
             <div class="row featurette">
@@ -17,13 +62,13 @@ const Profile = () => {
                     <div class="list-group list-group-checkable">
                         <input class="list-group-item-check" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios1" value="" />
                         <label class="list-group-item py-3" for="listGroupCheckableRadios1">
-                            First radio
+                            {username}
                             <span class="d-block small opacity-50">With support text underneath to add more detail</span>
                         </label>
 
                         <input class="list-group-item-check" type="radio" name="listGroupCheckableRadios" id="listGroupCheckableRadios2" value="" />
                         <label class="list-group-item py-3" for="listGroupCheckableRadios2">
-                            Second radio
+                            {email}
                             <span class="d-block small opacity-50">Some other text goes here</span>
                         </label>
 
