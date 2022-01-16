@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
+const verifyauth = require('../Middlewares/Auth');
 
 var User = require('../models/User');
 
@@ -10,7 +11,7 @@ router.use(bodyParser.json({ extended: true }));
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(cookieParser());
 
-const jwt_validTill = 5*60
+const jwt_validTill = 60*60
 const generate_jwt = (id, age) => {
     return jwt.sign(
         {id}, 
@@ -94,6 +95,10 @@ router.post('/login', async (req,res) => {
         return res.status(422).json({"message": "Incorrect Password"});
     }
 
+})
+router.get('/profile', verifyauth, (req, res) => {
+
+    res.status(200).json(req.validuser)
 })
 
 module.exports = router;
