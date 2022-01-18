@@ -1,7 +1,52 @@
-import React from "react";
+//import React from "react";
+import React, { useEffect, useState } from 'react'
+import { useNavigate } from 'react-router-dom';
 import "../css/about.css";
 
 const Newprofile = () => {
+
+	const navigate = useNavigate();
+    const [username, setUsername] = useState('')
+	const [email, setEmail] = useState('')
+
+    const getProfile = async () => {
+        
+        try 
+        {
+            const response = await fetch('http://avr:80/profile', {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'x-access-token': localStorage.getItem('token'),
+            },
+                
+            })
+
+            const data = await response.json();
+
+            if (response.status === 200)
+            {
+                //window.alert(data.username);
+                console.log(data);
+                setUsername(data.username);
+                setEmail(data.email);
+
+            }else{
+                const err = new Error(response.error);
+                throw err; 
+            }
+        } catch(error){
+            console.log(error)
+            navigate('/login')
+        }
+
+    }
+    useEffect(() => {
+        
+        getProfile();
+
+    }, []);
+
     return(
         <>
 			<div class="container emp-profile">
@@ -19,11 +64,12 @@ const Newprofile = () => {
                     <div class="col-md-6">
                         <div class="profile-head">
                                     <h5>
-                                        Kshiti Ghelani
+										{username}
                                     </h5>
                                     <h6>
                                         Web Developer and Designer
                                     </h6>
+									
                                     <p class="proile-rating">RANKINGS : <span>8/10</span></p>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
@@ -44,14 +90,14 @@ const Newprofile = () => {
                         <div class="profile-work">
                             <p>WORK LINK</p>
                             <a href="">Website Link</a><br/>
-                            <a href="">Bootsnipp Profile</a><br/>
-                            <a href="">Bootply Profile</a>
+                            <a href="">Github Profile</a><br/>
+                            <a href="">LinkedIn Profile</a>
                             <p>SKILLS</p>
-                            <a href="">Web Designer</a><br/>
-                            <a href="">Web Developer</a><br/>
-                            <a href="">WordPress</a><br/>
-                            <a href="">WooCommerce</a><br/>
-                            <a href="">PHP, .Net</a><br/>
+                            <span class="badge rounded-pill bg-success">Web Designer</span>
+                            <span class="badge rounded-pill bg-success">Web Developer</span>
+                            <a href="">WordPress</a>
+                            <a href="">WooCommerce</a>
+                            <a href="">PHP, .Net</a>
                         </div>
                     </div>
                     <div class="col-md-8">
@@ -62,7 +108,7 @@ const Newprofile = () => {
                                                 <label>User Id</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>Kshiti123</p>
+                                                <p>{username}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -78,7 +124,7 @@ const Newprofile = () => {
                                                 <label>Email</label>
                                             </div>
                                             <div class="col-md-6">
-                                                <p>kshitighelani@gmail.com</p>
+                                                <p>{email}</p>
                                             </div>
                                         </div>
                                         <div class="row">
@@ -96,7 +142,9 @@ const Newprofile = () => {
                                             <div class="col-md-6">
                                                 <p>Web Developer and Designer</p>
                                             </div>
+											
                                         </div>
+										
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                         <div class="row">
