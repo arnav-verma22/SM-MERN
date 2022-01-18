@@ -101,4 +101,27 @@ router.get('/profile', verifyauth, (req, res) => {
     res.status(200).json(req.validuser)
 })
 
+router.post('/editprofile', verifyauth, async (req, res) => {
+    console.log(req.body)
+
+    const topicsarray = req.body.topics.split(", ");
+    const skillsarray = req.body.skills.split(", ");
+    
+    try {
+        
+        await User.updateOne({username: req.validuser.username}, {$set: { topics: topicsarray, skills: skillsarray}});
+        res.status(200).json(
+            {
+                message: "User profile updated",
+                topics: topicsarray, 
+                skills: skillsarray
+            }
+        )
+
+    } catch (error) {
+        console.log(error);
+    }
+    
+})
+
 module.exports = router;

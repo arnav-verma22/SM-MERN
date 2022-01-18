@@ -16,11 +16,11 @@ var userSchema = new Schema({
         required : true
     },
     skills: {
-        type: String,
+        type: Array,
         
     },
     topics: {
-        type: String,
+        type: Array,
         
     },
     projects: {
