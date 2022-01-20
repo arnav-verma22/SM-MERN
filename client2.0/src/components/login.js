@@ -33,7 +33,7 @@ const Login = () => {
             localStorage.setItem('token', data.jwt)
             window.alert(data.message);
             console.log(data);
-            navigate('/profile')
+            navigate('/about')
         }else{
             window.alert(data.message);
             console.log(data.message);

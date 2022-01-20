@@ -31,7 +31,7 @@ const NavBar = () => {
                     <a className="nav-link" href="/profile">Profile</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="/signin">BTSP Signin</a>
+                    <a className="nav-link" href="/edit">BTSP Signin</a>
                   </li>
                   <li className="nav-item">
                     <a className="nav-link" href="/about">BTSP about</a>

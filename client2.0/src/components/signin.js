@@ -34,6 +34,7 @@ const Signin = () => {
                 console.log(data);
                 setUsername(data.username);
                 setEmail(data.email);
+                setSkills(data.skills)
 
             }else{
                 const err = new Error(response.error);

@@ -8,7 +8,8 @@ const Newprofile = () => {
 	const navigate = useNavigate();
     const [username, setUsername] = useState('')
 	const [email, setEmail] = useState('')
-
+    const [users, setUsers] = useState('')
+    const [skills, setskills] = useState('')
     const getProfile = async () => {
         
         try 
@@ -28,8 +29,12 @@ const Newprofile = () => {
             {
                 //window.alert(data.username);
                 console.log(data);
+
                 setUsername(data.username);
                 setEmail(data.email);
+                setUsers(data);
+                setskills(data.skills);
+                
 
             }else{
                 const err = new Error(response.error);
@@ -44,8 +49,23 @@ const Newprofile = () => {
     useEffect(() => {
         
         getProfile();
+        
 
     }, []);
+    const editProfile = () => {
+        
+        navigate('/edit')
+        
+    }
+
+    const getlist = () => {
+        skills.map(skill => (
+            <span class="badge rounded-pill bg-success">{skill}</span>
+         ))
+    } 
+    // const skillList = skills.map(skill => (
+    //                 <span class="badge rounded-pill bg-success">{skill}</span>
+    //              ))
 
     return(
         <>
@@ -82,7 +102,7 @@ const Newprofile = () => {
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile" onClick={editProfile} />
                     </div>
                 </div>
                 <div class="row">
@@ -93,11 +113,14 @@ const Newprofile = () => {
                             <a href="">Github Profile</a><br/>
                             <a href="">LinkedIn Profile</a>
                             <p>SKILLS</p>
-                            <span class="badge rounded-pill bg-success">Web Designer</span>
-                            <span class="badge rounded-pill bg-success">Web Developer</span>
-                            <a href="">WordPress</a>
-                            <a href="">WooCommerce</a>
-                            <a href="">PHP, .Net</a>
+                            
+                            {getlist}
+                            {/* {skillList} */}
+                            {/* {skills.map(skill => (
+                               <span class="badge rounded-pill bg-success">{skill}</span>
+                            ))} */}
+                            
+                            
                         </div>
                     </div>
                     <div class="col-md-8">
