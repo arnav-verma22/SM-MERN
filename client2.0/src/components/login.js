@@ -43,7 +43,7 @@ const Login = () => {
     return (
        <>
             <div className="text-center">
-            <div className="container col-xl-10 col-xxl-8 px-4 py-5">
+            <div className="container col-xl-15 col-xxl-8 px-4 py-5">
                 <div className="row align-items-center g-lg-5 py-5">
                 
                 <div className="col-md-10 mx-auto col-lg-5">
@@ -65,7 +65,7 @@ const Login = () => {
                         <input type="checkbox" value="remember-me" /> Remember me
                         </label>
                     </div>
-                    <button className="w-100 btn btn-lg btn-primary" type="submit" onClick={loginUser}>Log in</button>
+                    <button className="w-100 btn btn-lg btn-success" type="submit" onClick={loginUser}>Log in</button>
                     <hr className="my-4" />
                     <small className="text-muted">By clicking Sign up, you agree to the terms of use.</small>
                     </form>

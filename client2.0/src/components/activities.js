@@ -1,136 +1,181 @@
 import React from "react";
 
+import "../css/activities.css";
+
 const Activities = () => {
     return (
         <>
-            <div class="col-md-8 col-xl-9">
-							<div class="card">
-								<div class="card-header">
-									<div class="card-actions float-end">
-										<div class="dropdown position-relative">
-											<a href="#" data-bs-toggle="dropdown" data-bs-display="static">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-more-horizontal align-middle"><circle cx="12" cy="12" r="1"></circle><circle cx="19" cy="12" r="1"></circle><circle cx="5" cy="12" r="1"></circle></svg>
-            </a>
+		<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+        <div class="container">
+<h1 class="h3 mb-3 text-white"></h1>
+<div class="row">
+<div class="container bootdey">
+<div class="content">
+<div id="pad-wrapper">
+             <div class="col-md-8 col-xl-12">
+    <div class="panel panel-default">
+    <div class="card-header"> <h4 class="card-title mb-0">Activities</h4></div>
+    <div class="panel-body">
+        
+        <div class="ibox-content">
+           <div class="feed-activity-list">
 
-											<div class="dropdown-menu dropdown-menu-end">
-												<a class="dropdown-item" href="#">Action</a>
-												<a class="dropdown-item" href="#">Another action</a>
-												<a class="dropdown-item" href="#">Something else here</a>
-											</div>
-										</div>
-									</div>
-									<h5 class="card-title mb-0">Activities</h5>
-								</div>
-								<div class="card-body h-100">
+                <div class="feed-element">
+                    <a href="#" class="pull-left">
+                    <img alt="image" class="img-circle" src="https://bootdey.com/img/Content/avatar/avatar1.png" />
+                    </a>
+                               
+                    <div class="media-body ">
+                        <small class="pull-right text-navy">5m ago</small>
+                        <strong>Vaughn Oremortsac</strong> started following <strong>Oscar Adrian Acosta</strong>.<br />
+                        <small class="text-muted">Today 6:19 am - 12.04.2015</small>
+                        
+                        <div class="actions">
+                        <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+                        <a class="btn btn-xs btn-danger"><i class="fa fa-heart"></i> Love</a>
+                        </div>
+                    </div>
+                </div>
 
-									<div class="d-flex align-items-start">
-										<img src="img/avatars/avatar-5.jpg" width="36" height="36" class="rounded-circle me-2" alt="Ashley Briggs" />
-										<div class="flex-grow-1">
-											<small class="float-end">5m ago</small>
-											<strong>Ashley Briggs</strong> started following <strong>Stacie Hall</strong><br />
-											<small class="text-muted">Today 7:51 pm</small><br />
+                <div class="feed-element">
+                    <a href="#" class="pull-left">
+                    <img alt="image" class="img-circle" src="https://bootdey.com/img/Content/avatar/avatar2.png" />
+                    </a>
+                    
+                    <div class="media-body ">
+                        <small class="pull-right">30m ago</small>
+                        <strong>Spider Rodas</strong> purchased Ebook pro. <br />
+                        <small class="text-muted">Today 8:52 pm - 1.06.2015</small>
+                    </div>
+                </div>
 
-										</div>
-									</div>
+                <div class="feed-element">
+                    <a href="#" class="pull-left">
+                    <img alt="image" class="img-circle" src="https://bootdey.com/img/Content/avatar/avatar3.png" />
+                    </a>
+                    
+                    <div class="media-body ">
+                        <small class="pull-right">2h ago</small>
+                        <strong>Pollet Piedad</strong> posted message on <strong>Aifa Agpasa</strong> site. <br />
+                        <small class="text-muted">Today 2:10 pm - 12.06.2016</small>
+                            <div class="border text-sm text-muted p-2 mt-1">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                            </div>
+                            <div class="pull-right">
+                                <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+                                <a class="btn btn-xs btn-white"><i class="fa fa-heart"></i> Love</a>
+                                <a class="btn btn-xs btn-primary"><i class="fa fa-pencil"></i> Message</a>
+                            </div>
+                    </div>
+                </div>
 
-									<hr />
-									<div class="d-flex align-items-start">
-										<img src="img/avatars/avatar.jpg" width="36" height="36" class="rounded-circle me-2" alt="Chris Wood" />
-										<div class="flex-grow-1">
-											<small class="float-end">30m ago</small>
-											<strong>Chris Wood</strong> posted something on <strong>Stacie Hall</strong>'s timeline<br />
-											<small class="text-muted">Today 7:21 pm</small>
+                <div class="feed-element">
+                    <a href="#" class="pull-left">
+                    <img alt="image" class="img-circle" src="https://bootdey.com/img/Content/avatar/avatar4.png" />
+                    </a>
+                    
+                    <div class="media-body ">
+                        <small class="pull-right">2h ago</small>
+                        <strong>Myan Francisco</strong> add 1 photo on <strong>Hector Sanqui</strong>. <br />
+                        <small class="text-muted">4 days ago at 5:29pm</small>
+                            <div class="photos">
+                                <a target="_blank" href="#">
+                                <img alt="image" class="feed-photo" src="https://via.placeholder.com/200x220/" /></a>
+                                <a target="_blank" href="#">
+                                <img alt="image" class="feed-photo" src="https://via.placeholder.com/200x220/" /></a>
+                            </div>
+                    </div>
+                </div>
+                
+                <div class="feed-element">
+                    <a href="#" class="pull-left">
+                    <img alt="image" class="img-circle" src="https://bootdey.com/img/Content/avatar/avatar5.png" />
+                    </a>
+                    
+                    <div class="media-body ">
+                        <small class="pull-right text-navy">5h ago</small>
+                        <strong>Nahtanoj Odapsar</strong> started following <strong>Myan Francisco</strong>. <br />
+                        <small class="text-muted">Yesterday 1:21 pm - 11.06.2016</small>
+                        <div class="actions">
+                            <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+                            <a class="btn btn-xs btn-white"><i class="fa fa-heart"></i> Love</a>
+                        </div>
+                    </div>
+                </div>
 
-											<div class="border text-sm text-muted p-2 mt-1">
-												Etiam rhoncus. Maecenas tempus, tellus eget condimentum rhoncus, sem quam semper libero, sit amet adipiscing sem neque sed ipsum. Nam quam nunc, blandit vel, luctus
-												pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.
-											</div>
+                <div class="feed-element">
+                    <a href="#" class="pull-left">
+                    <img alt="image" class="img-circle" src="https://bootdey.com/img/Content/avatar/avatar6.png" />
+                    </a>
+                    
+                    <div class="media-body ">
+                        <small class="pull-right">2h ago</small>
+                        <strong>Roselyn Rasay Distor</strong> posted message on <strong>Aifa Agpasa</strong> site. <br />
+                        <small class="text-muted">Yesterday 5:20 pm - 12.06.2016</small>
+                        <div class="border text-sm text-muted p-2 mt-1">
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                        </div>
+                        
+                        <div class="pull-right">
+                        <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> Like </a>
+                        </div>
+                    </div>
+                </div>
 
-											<a href="#" class="btn btn-sm btn-danger mt-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart feather-sm"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> Like</a>
-										</div>
-									</div>
 
-									<hr />
-									<div class="d-flex align-items-start">
-										<img src="img/avatars/avatar-4.jpg" width="36" height="36" class="rounded-circle me-2" alt="Stacie Hall" />
-										<div class="flex-grow-1">
-											<small class="float-end">1h ago</small>
-											<strong>Stacie Hall</strong> posted a new blog<br />
+                <div class="feed-element">
+                    <a href="#" class="pull-left">
+                    <img alt="image" class="img-circle" src="https://bootdey.com/img/Content/avatar/avatar1.png" />
+                    </a>
+                    
+                    <div class="media-body ">
+                    <small class="pull-right">23h ago</small>
+                    <strong>Nhadine Lachica</strong> love <strong>Ace Ventura</strong>. <br />
+                    <small class="text-muted">2 days ago at 2:30 am - 11.06.2017</small>
+                    </div>
+                </div>
 
-											<small class="text-muted">Today 6:35 pm</small>
-										</div>
-									</div>
 
-									<hr />
-									<div class="d-flex align-items-start">
-										<img src="img/avatars/avatar-2.jpg" width="36" height="36" class="rounded-circle me-2" alt="Carl Jenkins" />
-										<div class="flex-grow-1">
-											<small class="float-end">3h ago</small>
-											<strong>Carl Jenkins</strong> posted two photos on <strong>Stacie Hall</strong>'s timeline<br />
-											<small class="text-muted">Today 5:12 pm</small>
+                <div class="feed-element">
+                    <a href="#" class="pull-left">
+                    <img alt="image" class="img-circle" src="https://bootdey.com/img/Content/avatar/avatar2.png" />
+                    </a>
+                    
+                    <div class="media-body ">
+                        <small class="pull-right">46h ago</small>
+                        <strong>Jonas Matias</strong> started following <strong>Luoie Yasay</strong>. <br />
+                        <small class="text-muted">3 days ago at 7:58 pm - 5.06.2017</small>
+                    </div>
+                </div>
+            </div>
 
-											<div class="row g-0 mt-1">
-												<div class="col-6 col-md-4 col-lg-4 col-xl-3">
-													<img src="img/photos/unsplash-1.jpg" class="img-fluid pe-2" alt="Unsplash" />
-												</div>
-												<div class="col-6 col-md-4 col-lg-4 col-xl-3">
-													<img src="img/photos/unsplash-2.jpg" class="img-fluid pe-2" alt="Unsplash" />
-												</div>
-											</div>
 
-											<a href="#" class="btn btn-sm btn-danger mt-1"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart feather-sm"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg> Like</a>
-										</div>
-									</div>
+            <button class="btn btn-cprimary btn-block ">
+                <i class="fa fa-arrow-down"></i> Show More
+            </button>
 
-									<hr />
-									<div class="d-flex align-items-start">
-										<img src="img/avatars/avatar-2.jpg" width="36" height="36" class="rounded-circle me-2" alt="Carl Jenkins" />
-										<div class="flex-grow-1">
-											<small class="float-end">1d ago</small>
-											<strong>Carl Jenkins</strong> started following <strong>Stacie Hall</strong><br />
-											<small class="text-muted">Yesterday 3:12 pm</small>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
 
-											<div class="d-flex align-items-start mt-1">
-												<a class="pe-3" href="#">
-                <img src="img/avatars/avatar-4.jpg" width="36" height="36" class="rounded-circle me-2" alt="Stacie Hall"/>
-              </a>
-												<div class="flex-grow-1">
-													<div class="border text-sm text-muted p-2 mt-1">
-														Nam quam nunc, blandit vel, luctus pulvinar, hendrerit id, lorem. Maecenas nec odio et ante tincidunt tempus.
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-
-									<hr />
-									<div class="d-flex align-items-start">
-										<img src="img/avatars/avatar-4.jpg" width="36" height="36" class="rounded-circle me-2" alt="Stacie Hall" />
-										<div class="flex-grow-1">
-											<small class="float-end">1d ago</small>
-											<strong>Stacie Hall</strong> posted a new blog<br />
-											<small class="text-muted">Yesterday 2:43 pm</small>
-										</div>
-									</div>
-
-									<hr />
-									<div class="d-flex align-items-start">
-										<img src="img/avatars/avatar.jpg" width="36" height="36" class="rounded-circle me-2" alt="Chris Wood" />
-										<div class="flex-grow-1">
-											<small class="float-end">1d ago</small>
-											<strong>Chris Wood</strong> started following <strong>Stacie Hall</strong><br />
-											<small class="text-muted">Yesterdag 1:51 pm</small>
-										</div>
-									</div>
-
-									<hr />
-									<div class="d-grid">
-										<a href="#" class="btn btn-primary">Load more</a>
-									</div>
-								</div>
-							</div>
-						</div>
+    <div class="clearfix"></div>
+     <footer id="footer"> 
+        <div class="text-center clearfix">
+                <br /><br /> 
+                <a href="#" class="btn btn-xs btn-circle btn-twitter"><i class="fa fa-twitter"></i></a> 
+                <a href="#" class="btn btn-xs btn-circle btn-facebook"><i class="fa fa-facebook"></i></a> 
+                <a href="#" class="btn btn-xs btn-circle btn-gplus"><i class="fa fa-google-plus"></i></a> 
+            
+        </div> 
+    </footer>
+  </div>
+  </div>
+  </div>
+  </div>
 
         </>
     )
 }
+export default Activities;

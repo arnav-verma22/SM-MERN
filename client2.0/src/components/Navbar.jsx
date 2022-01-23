@@ -27,14 +27,19 @@ const NavBar = () => {
                   <li className="nav-item">
                     <a className="nav-link" href="/register">Register</a>
                   </li>
+                  
+                  
                   <li className="nav-item">
-                    <a className="nav-link" href="/profile">Profile</a>
+                    <a className="nav-link" href="/about">Profile</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="/edit">BTSP Signin</a>
+                    <a className="nav-link" href="/activities">Activities</a>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" href="/about">BTSP about</a>
+                    <a className="nav-link" href="/explore">Explore</a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="/exp">Experiments</a>
                   </li>
                   <li className="nav-item dropdown">
                     <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
